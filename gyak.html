@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="const ujszam= Math.trunc(Math.random() *(100 - 1 + 1 ))+1;"> új szám generálása</button>
+    <br> </br>
+    <button onclick="ido()"> Köszöntés</button>
+    <br> </br>
+    
+    <button onclick="haromszog()"> Háromszög kerülete</button>
+    <p id="haromker"> </p>
+    <br></br>
+    <button onclick="haromszogter()"> Háromszög területe</button>
+    <p id="haromter"> </p>
+    
+   
+    
+    
+    <script>
+        
+        function veletlenSzam() {
+            console.log(veletlenEgesz(1, 100));
+        }
+        function veletlenEgesz(min, max) {
+            return Math.trunc(Math.random() * (max - min + 1)) + min;
+        
+        }
+        
+        function tipp(){
+            const rrandom = Math.trunc(Math.random() *(100 - 1 + 1 ))+1;
+            const input = prompt ("Adjon meg egy számot")
+            if(input==rrandom){
+                console.log("eltalálta")
+
+            }
+            else{
+                console.log("Nem találta el")
+            }
+            if(input>rrandom){
+                alert("A gondoltszám kisebb")
+            }
+            else{
+                alert("A gondoltszám nagyobb")
+            }
+        }
+        function haromszog(){
+            const a=parseFloat(prompt("Háromszög egyik oldala: "))
+            const b=parseFloat(prompt("Háromszög egyik oldala: "))
+            const c=parseFloat(prompt("Háromszög egyik oldala: "))
+            const kerulet = a+b+c
+            console.log("Háromszög kerülete",kerulet)
+            haromker.innerHTML=kerulet
+
+            
+            
+
+        }
+        function haromszogter()
+        {
+            const a=parseFloat(prompt("Háromszög egyik oldala: "))
+            const b=parseFloat(prompt("Háromszög egyik oldala: "))
+            const c=parseFloat(prompt("Háromszög egyik oldala: "))
+            const s=(a+b+c)/2
+            const terulet=Math.sqrt(s*(s-a)*(s-b)*(s-c))
+            console.log(terulet,"a területe")
+            haromter.innerHTML=terulet
+            
+
+        }
+        
+        
+        
+        const d = new Date();
+        let hour = d.getHours();
+        function ido()
+    {
+        if (hour >= 0 && hour <=8)
+        {
+            alert("Jó reggelt!")
+        }
+        if (hour >= 9 && hour <=16)
+        {
+            alert("Jó Napot!")
+        }
+        if (hour >= 17 && hour <=23)
+        {
+            alert("Jó Estét kívánok!")
+        }
+    }
+    
+        
+
+
+
+        veletlenSzam();
+        //tipp();
+        
+         
+
+    </script>
+    
+</body>
+</html>
